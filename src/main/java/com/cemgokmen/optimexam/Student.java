@@ -37,7 +37,7 @@ public class Student {
     public boolean hasConflict(Schedule schedule) {
         if (schedule == null) throw new NullPointerException();
         for (int day = 0; day < schedule.getDays(); day++) {
-            for (int slot = 0; slot < schedule.getMaxExamsPerDay(); slot++) {
+            for (int slot = 0; slot < schedule.getSlots(); slot++) {
                 Set<Course> exams = schedule.getExams(day, slot);
                 int intersections = Sets.intersection(exams, courses).size();
 
@@ -52,7 +52,7 @@ public class Student {
         int[] numberOfDaysByExamCount = {0, 0, 0};
         for (int day = 0; day < schedule.getDays(); day++) {
             int examsForTheDay = 0;
-            for (int slot = 0; slot < schedule.getMaxExamsPerDay(); slot++) {
+            for (int slot = 0; slot < schedule.getSlots(); slot++) {
                 Set<Course> exams = schedule.getExams(day, slot);
                 int intersections = Sets.intersection(exams, courses).size();
                 if (intersections == 1) {

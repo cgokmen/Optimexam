@@ -25,4 +25,5 @@ public class Course {
     public boolean hasExam() {
         return hasExam;
     }
+
 }

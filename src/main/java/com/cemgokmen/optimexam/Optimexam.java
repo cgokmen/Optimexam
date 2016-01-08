@@ -72,6 +72,10 @@ public class Optimexam
         }
     }
 
+    public static String repeat(int count, String with) {
+        return new String(new char[count]).replace("\0", with);
+    }
+
     public static void solve(Student[] students, Schedule schedule, int day, int slot) {
         /* Constraints:
             Score must be greater than 1.
