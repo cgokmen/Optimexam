@@ -47,7 +47,7 @@ public class Student {
         return false;
     }
 
-    public int[] calculateDays(Schedule schedule) throws ConflictingScheduleException {
+    public int[] calculateDays(Schedule schedule) throws Exception {
         if (schedule == null) throw new NullPointerException();
         int[] numberOfDaysByExamCount = {0, 0, 0};
         for (int day = 0; day < schedule.getDays(); day++) {
@@ -58,7 +58,7 @@ public class Student {
                 if (intersections == 1) {
                     examsForTheDay++;
                 } else if (intersections > 1) {
-                    throw new ConflictingScheduleException(String.format("Student %s has conflicting classes in schedule", number + ""));
+                    throw new Exception(String.format("Student %s has conflicting classes in schedule", number + ""));
                 }
             }
             numberOfDaysByExamCount[examsForTheDay]++;
