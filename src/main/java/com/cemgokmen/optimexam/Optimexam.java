@@ -12,7 +12,7 @@ public class Optimexam
     private static Schedule winningSchedule;
     private static int winningScore;
 
-    public static void main( String[] args ) throws ConflictingScheduleException {
+    public static void main( String[] args ) throws Exception {
         Scanner console = new Scanner(System.in);
         System.out.println("\nWelcome to Optimexam!");
 
@@ -88,7 +88,7 @@ public class Optimexam
 
                 // We add two points per empty day and one point for a half-full day
                 score += numberOfDaysByExamCount[0] * 2 + numberOfDaysByExamCount[1];
-            } catch (ConflictingScheduleException e) {
+            } catch (Exception e) {
                 return -1;
             }
         }
